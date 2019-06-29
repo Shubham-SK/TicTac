@@ -14,16 +14,18 @@ ___
 ### MiniMax application on Tic-Tac-Toe
 
 Consider the following board state, we’ll attempt to solve it as O.
-How would we solve this (​Figure 1​)? There’s a clear winning move. Put O in the middle! But, is this the only way for O to emerge victorious, or can we win in a different way? To answer that question, let’s consider a diagram that encompasses every subsequent game state, and the turnout of each move. Let’s analyze the following tree.
+How would we solve this (​Figure 1​)? There’s a clear winning move. Put O in the middle! But, is this the only way for O to emerge victorious, or can we win in a different way? 
 
-<img style = "text-align: center" src="/assets/fig1.png" alt="" width="100" height="100"/>
+<img style = "text-align: center" src="/assets/fig1.png" alt="Figure 1: Made with Adobe Illustrator" width="100" height="100"/>
 
-<img style = "text-align: center" src="/assets/fig2.png" alt="" width="625" height="454"/>
+To answer that question, let’s consider a diagram that encompasses every subsequent game state, and the turnout of each move. Let’s analyze the following tree.
+
+<img style = "text-align: center" src="/assets/fig2.png" alt="Figure 2: Made with Adobe Illustrator" width="625" height="454"/>
    
 Our current game state is (​1.0​), from here, we have 3 places we can put our O. One of them, namely (​2.1​), will yield an immediate victory, and the other 2 will prolong the game giving the opponent a chance to make another move. In two of the cases (​3.2​,​ 3.3​), we would lose, but in cases (​3.1​,​ 3.4​), we would win.
 Let’s simplify the tree and only consider the terminal states so we can easily backpropagate through the tree. Consider the following tree.
 
-<img style = "text-align: center" src="/assets/fig3.png" alt="" width="245" height="155"/>
+<img style = "text-align: center" src="/assets/fig3.png" alt="Figure 3: Made with Adobe Illustrator" width="245" height="155"/>
 
 We can interpret *Figure 3* as follows,
 Start with the bottom tier of terminal events. In this tier, we want to maximize, so we’ll send the ​+1​ to the tier above, so node ​C​ becomes ​+1​.​ N​ ow we can proceed to analyze the middle tier. Here, we want to minimize, so we’ll propagate the ​-1​ t​ o ​A​ and ​B​. In the top tier, we want to maximize, so we’ll send ​+1 ​to the head tier, denoted by ​H​, where we will be advised to pick the move associated with the ​+1​.

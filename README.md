@@ -25,7 +25,7 @@ To answer that question, let’s consider a diagram that encompasses every subse
 Our current game state is (​1.0​), from here, we have 3 places we can put our O. One of them, namely (​2.1​), will yield an immediate victory, and the other 2 will prolong the game giving the opponent a chance to make another move. In two of the cases (​3.2​,​ 3.3​), we would lose, but in cases (​3.1​,​ 3.4​), we would win.
 Let’s simplify the tree and only consider the terminal states so we can easily backpropagate through the tree. Consider the following tree.
 
-<img style = "text-align: center" src="/assets/fig3.png" alt="Figure 3: Made with Adobe Illustrator" width="245" height="155"/>
+<img style = "text-align: center" src="/assets/fig3.png" alt="Figure 3: Made with Adobe Illustrator" width="490" height="310"/>
 
 We can interpret *Figure 3* as follows,
 Start with the bottom tier of terminal events. In this tier, we want to maximize, so we’ll send the ​+1​ to the tier above, so node ​C​ becomes ​+1​.​ N​ ow we can proceed to analyze the middle tier. Here, we want to minimize, so we’ll propagate the ​-1​ t​ o ​A​ and ​B​. In the top tier, we want to maximize, so we’ll send ​+1 ​to the head tier, denoted by ​H​, where we will be advised to pick the move associated with the ​+1​.

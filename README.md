@@ -1,8 +1,29 @@
 # Tic-Tac-Toe
 Minimax implementation to play the classic game of tic-tac-toe.
 ___
-### Introduction
+### Usage
+Clone the repository, navigate to the game.py file, and run the file.
 
+```
+git clone https://github.com/Shubham-SK/tictac.git
+cd tictac
+python3 game.py
+```
+
+Once the file has been run, you will be prompted to enter which character you would like to play as and then whether or not you want to make the first move. After your preferences have succesfully been entered, you should see an empty game board appear. You will be asked to select your position using a number between 1 - 9, each corresponding to a cell in the game board. The grid is labeled as follows:
+
+|   |   |   |
+| - | - | - |
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+|   |   |   |
+
+The computer will then play its turn and you will be asked again to play yours. This will continue until a player has emerged triumphant, hopefully the computer ;). 
+___
+### Program Logic
+
+###### Introduction
 Tic-tac-toe is a zero-sum and perfect information game, giving it some notable properties that we can exploit while designing the algorithm.
 
 **Definition 1.1**​ ​- A zero-sum game is a mathematical expression of a game state in which the gain and loss of utility of one player is the same as another player. Total gains minus total loss is always 0.
@@ -11,7 +32,7 @@ Tic-tac-toe is a zero-sum and perfect information game, giving it some notable p
 
 Seeing that this game is a two-player turn based game with the aforementioned properties, it’s the perfect opportunity to use a popular game theory algorithm called, MiniMax. This is a recursive algorithm, which is used to determine the optimal move. It considers every subsequent game state until it reaches a terminal state and tries to minimize the maximum loss, hence the name MiniMax. Having established the algorithm we will use, let’s explore the inner-workings of it.
 ___
-### MiniMax application on Tic-Tac-Toe
+###### Minimax Application
 
 Consider the following board state, we’ll attempt to solve it as O.
 How would we solve this (​Figure 1​)? There’s a clear winning move. Put O in the middle! But, is this the only way for O to emerge victorious, or can we win in a different way? 
@@ -37,5 +58,5 @@ We can interpret *Figure 3* as follows,
 Start with the bottom tier of terminal events. In this tier, we want to maximize, so we’ll send the ​+1​ to the tier above, so node ​C​ becomes ​+1​.​ N​ ow we can proceed to analyze the middle tier. Here, we want to minimize, so we’ll propagate the ​-1​ t​ o ​A​ and ​B​. In the top tier, we want to maximize, so we’ll send ​+1 ​to the head tier, denoted by ​H​, where we will be advised to pick the move associated with the ​+1​.
 Hence, the algorithm will choose the move that we initially contemplated proceeding with! Our algorithm will perpetually perform similar analyses at every game state, ensuring the best for the computer. Thus, the algorithm will be unbeatable, the best a user can do is lead the game to a draw.
 ___
-### Sidenote
+###### Side Note
 Because the possible game states is relatively small, 3 <sup>6</sup> = 196839 , the computer can easily iterate through every possibility and choose the optimal move. On the contrary, if we were playing a game like chess, this approach may not be the most efficient because the number of game states would be greater than the number of atoms in the observable universe!

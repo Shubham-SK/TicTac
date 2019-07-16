@@ -23,7 +23,7 @@ How would we solve this (​Figure 1​)? There’s a clear winning move. Put O 
 To answer that question, let’s consider a diagram that encompasses every subsequent game state, and the turnout of each move. Let’s analyze the following tree.
 
 <p align = "center">
-<img style = "text-align: center" src="/assets/fig2.png" alt="Figure 2: Made with Adobe Illustrator" width="625" height="454"/>
+<img style = "text-align: center" src="/assets/fig2.png" alt="Figure 2: Made with Adobe Illustrator" width="625" height="503"/>
  </p>
    
 Our current game state is (​1.0​), from here, we have 3 places we can put our O. One of them, namely (​2.1​), will yield an immediate victory, and the other 2 will prolong the game giving the opponent a chance to make another move. In two of the cases (​3.2​,​ 3.3​), we would lose, but in cases (​3.1​,​ 3.4​), we would win.

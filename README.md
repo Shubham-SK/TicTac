@@ -55,7 +55,7 @@ Let’s simplify the tree and only consider the terminal states so we can easily
 </p>
 
 We can interpret *Figure 3* as follows,
-Start with the bottom tier of terminal events. In this tier, we want to maximize, so we’ll send the ​+1​ to the tier above, so node ​C​ becomes ​+1​.​ N​ ow we can proceed to analyze the middle tier. Here, we want to minimize, so we’ll propagate the ​-1​ t​ o ​A​ and ​B​. In the top tier, we want to maximize, so we’ll send ​+1 ​to the head tier, denoted by ​H​, where we will be advised to pick the move associated with the ​+1​.
+Start with the bottom tier of terminal events. In this tier, we want to maximize, so we’ll send the ​+1​ to the tier above, so node ​C​ becomes ​+1​. Now we can proceed to analyze the middle tier. Here, we want to minimize, so we’ll propagate the ​-1​ t​ o ​A​ and ​B​. In the top tier, we want to maximize, so we’ll send ​+1 ​to the head tier, denoted by ​H​, where we will be advised to pick the move associated with the ​+1​.
 Hence, the algorithm will choose the move that we initially contemplated proceeding with! Our algorithm will perpetually perform similar analyses at every game state, ensuring the best for the computer. Thus, the algorithm will be unbeatable, the best a user can do is lead the game to a draw.
 ___
 ###### Side Note
